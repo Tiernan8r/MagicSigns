@@ -1,0 +1,13 @@
+main: me.Tiernanator.MagicSigns.Main
+version: 4.2
+name: MagicSigns
+description: Colour all the Signs!
+load: POSTWORLD
+author: Tiernanator
+website: None
+database: false
+depend: [Utilities]
+prefix: Sign
+softdepend: []
+loadbefore: []
+commands:
