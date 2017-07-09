@@ -9,15 +9,15 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import me.Tiernanator.MagicSigns.Main;
+import me.Tiernanator.MagicSigns.MagicSignsMain;
 import me.Tiernanator.MagicSigns.Events.CustomEvents.CustomSignClickEvent;
 import me.Tiernanator.Utilities.Players.SelectAction;
 
 public class SignInteractEvent implements Listener {
 
-	private Main plugin;
+	private MagicSignsMain plugin;
 
-	public SignInteractEvent(Main main) {
+	public SignInteractEvent(MagicSignsMain main) {
 		plugin = main;
 	}
 

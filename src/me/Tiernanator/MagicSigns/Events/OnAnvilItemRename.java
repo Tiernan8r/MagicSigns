@@ -9,13 +9,13 @@ import org.bukkit.inventory.AnvilInventory;
 import org.bukkit.inventory.ItemStack;
 
 import me.Tiernanator.Colours.MessageColourer;
-import me.Tiernanator.MagicSigns.Main;
+import me.Tiernanator.MagicSigns.MagicSignsMain;
 import me.Tiernanator.Utilities.Items.Item;
 
 public class OnAnvilItemRename implements Listener {
 
 
-	public OnAnvilItemRename(Main main) {
+	public OnAnvilItemRename(MagicSignsMain main) {
 	}
 
 	@EventHandler

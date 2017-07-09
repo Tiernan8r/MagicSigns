@@ -1,4 +1,4 @@
-main: me.Tiernanator.MagicSigns.Main
+main: me.Tiernanator.MagicSigns.MagicSignsMain
 version: 4.2
 name: MagicSigns
 description: Colour all the Signs!

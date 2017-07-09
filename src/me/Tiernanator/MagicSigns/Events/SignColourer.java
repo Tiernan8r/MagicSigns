@@ -6,12 +6,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.SignChangeEvent;
 
 import me.Tiernanator.Colours.MessageColourer;
-import me.Tiernanator.MagicSigns.Main;
+import me.Tiernanator.MagicSigns.MagicSignsMain;
 
 public class SignColourer implements Listener {
 
 
-	public SignColourer(Main main) {
+	public SignColourer(MagicSignsMain main) {
 	}
 
 	@EventHandler

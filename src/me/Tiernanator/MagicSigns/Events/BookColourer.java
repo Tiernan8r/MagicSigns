@@ -9,12 +9,12 @@ import org.bukkit.event.player.PlayerEditBookEvent;
 import org.bukkit.inventory.meta.BookMeta;
 
 import me.Tiernanator.Colours.MessageColourer;
-import me.Tiernanator.MagicSigns.Main;
+import me.Tiernanator.MagicSigns.MagicSignsMain;
 
 public class BookColourer implements Listener {
 
 
-	public BookColourer(Main main) {
+	public BookColourer(MagicSignsMain main) {
 	}
 
 	@EventHandler

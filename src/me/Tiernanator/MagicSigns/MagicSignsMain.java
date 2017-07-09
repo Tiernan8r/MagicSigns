@@ -8,7 +8,7 @@ import me.Tiernanator.MagicSigns.Events.OnAnvilItemRename;
 import me.Tiernanator.MagicSigns.Events.SignColourer;
 import me.Tiernanator.MagicSigns.Events.SignInteractEvent;
 
-public class Main extends JavaPlugin {
+public class MagicSignsMain extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
