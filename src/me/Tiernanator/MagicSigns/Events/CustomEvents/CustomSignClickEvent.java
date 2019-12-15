@@ -1,11 +1,11 @@
 package me.Tiernanator.MagicSigns.Events.CustomEvents;
+
+import me.Tiernanator.Utilities.Players.SelectAction;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-
-import me.Tiernanator.Utilities.Players.SelectAction;
 
 //This is the custom custom menu click event that is called by OnPlayerMenuClick, it just contains functions that
 //return all the values needed

@@ -1,5 +1,8 @@
 package me.Tiernanator.MagicSigns.Events;
 
+import me.Tiernanator.MagicSigns.Events.CustomEvents.CustomSignClickEvent;
+import me.Tiernanator.MagicSigns.MagicSignsMain;
+import me.Tiernanator.Utilities.Players.SelectAction;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
@@ -8,10 +11,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-
-import me.Tiernanator.MagicSigns.MagicSignsMain;
-import me.Tiernanator.MagicSigns.Events.CustomEvents.CustomSignClickEvent;
-import me.Tiernanator.Utilities.Players.SelectAction;
 
 public class SignInteractEvent implements Listener {
 
@@ -29,53 +28,30 @@ public class SignInteractEvent implements Listener {
 			return;
 		}
 		Material material = block.getType();
+
 		if(material != Material.SIGN && material != Material.SIGN_POST && material != Material.WALL_SIGN) {
 			return;
 		}
-		
+
 		if (!(block.getState() instanceof Sign)) {
 			return;
 		}
+		//Get whether the player right or left clicked on the sign
 		Action action = event.getAction();
 		SelectAction selectAction = SelectAction.getSelectAction(action);
 
+		//Get the sign clicked
 		Sign sign = (Sign) event.getClickedBlock().getState();
 
+		//Get the player
 		Player player = event.getPlayer();
 
+		//Create the sign click event to call
 		CustomSignClickEvent signClickEvent = new CustomSignClickEvent(player,
 				sign, selectAction);
+		//Call the event and set it to the cancelled state or not
 		plugin.getServer().getPluginManager().callEvent(signClickEvent);
 		event.setCancelled(signClickEvent.isCancelled());
-		// HeadsUpDisplay display = new HeadsUpDisplay();
-		// display.displayTextBar("WOOOOOOOOOO", player);
-
-		// PacketPlayOutNamedEntitySpawn npc = new
-		// PacketPlayOutNamedEntitySpawn(p.getHandle());
-		//
-		// //the a field used to be public, we'll need to use reflection to
-		// access:
-		// try {
-		// Field field = npc.getClass().getDeclaredField("a");
-		// field.setAccessible(true);// allows us to access the field
-		//
-		// field.setInt(npc, 123);// sets the field to an integer
-		// field.setAccessible(!field.isAccessible());//we want to stop
-		// accessing this now
-		// } catch(Exception x) {
-		// x.printStackTrace();
-		// }
-		//
-		// //now comes the sending
-		// p.getHandle().playerConnection.sendPacket(npc);
-
-		// Packet packet = new
-
-		// ((CraftPlayer) player).getHandle().playerConnection.sendPacket();
-
-		// event.getPlayer().sendMessage(ChatColor.BLUE + "Poof!");
-
-		// sign.update();
 
 	}
 }

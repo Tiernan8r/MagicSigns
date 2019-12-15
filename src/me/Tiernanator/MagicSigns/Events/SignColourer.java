@@ -1,31 +1,31 @@
 package me.Tiernanator.MagicSigns.Events;
 
+import me.Tiernanator.Utilities.Colours.MessageColourer;
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.SignChangeEvent;
 
-import me.Tiernanator.Colours.MessageColourer;
-import me.Tiernanator.MagicSigns.MagicSignsMain;
-
+//Converts colour codes typed to a sign to their correct colour
 public class SignColourer implements Listener {
 
+    @EventHandler
+    public void onSignMake(SignChangeEvent event) {
 
-	public SignColourer(MagicSignsMain main) {
-	}
+        //Get the lines written to the sign
+        String[] allLines = event.getLines();
 
-	@EventHandler
-	public void onSignMake(SignChangeEvent event) {
+        //Iterate over all the lines
+        for (int i = 0; i < allLines.length; i++) {
 
-		String[] allLines = event.getLines();
+            //Get the line
+            String currentLine = allLines[i];
 
-		for (int i = 0; i < allLines.length; i++) {
+            //Format any of the colour codes to the correct colour
+            String formattedMessage = MessageColourer.parseMessage(currentLine, ChatColor.BLACK);
+            //Replace the lines with the new ones
+            event.setLine(i, formattedMessage);
+        }
+    }
 
-			String currentLine = allLines[i];
-			
-			String formattedMessage = MessageColourer.parseMessage(currentLine, ChatColor.BLACK);
-			
-			event.setLine(i, formattedMessage);
-		}
-	}
 }
