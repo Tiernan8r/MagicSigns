@@ -20,6 +20,7 @@ public class SignInteractEvent implements Listener {
 		plugin = main;
 	}
 
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onSignInteract(PlayerInteractEvent event) {
 
@@ -29,7 +30,7 @@ public class SignInteractEvent implements Listener {
 		}
 		Material material = block.getType();
 
-		if(material != Material.SIGN && material != Material.SIGN_POST && material != Material.WALL_SIGN) {
+		if(material != Material.LEGACY_SIGN && material != Material.LEGACY_SIGN_POST && material != Material.LEGACY_WALL_SIGN) {
 			return;
 		}
 

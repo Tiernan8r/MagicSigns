@@ -6,11 +6,12 @@ import org.bukkit.block.BlockFace;
 import org.bukkit.block.Sign;
 import org.bukkit.material.MaterialData;
 
+@SuppressWarnings("deprecation")
 public class SignBlock {
 
 	public static Block getAttachedToBlock(Sign sign) {
 
-		if(sign.getType() != Material.WALL_SIGN) {
+		if(sign.getType() != Material.LEGACY_WALL_SIGN) {
 			return null;
 		}
 
